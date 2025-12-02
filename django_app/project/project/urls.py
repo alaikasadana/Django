@@ -19,8 +19,23 @@ from django.urls import path
 from app import views
 
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('landingpage/',views.landingpage,name='landingpage') 
-    path('',views.landingpage,name='landingpage')               
+    # path('admin/', admin.site.urls),
+    # # path('landingpage/',views.landingpage,name='landingpage') 
+    path('',views.landingpage,name='landingpage') ,   
+    path('text_response/',views.text_response,name='text')    ,
+    path('html_response/',views.html_response,name="html")  ,
+    path('json_response/',views.json_response,name="json") ,
+    path('download_csv/',views.download_csv,name="csv"),
+    path('download_pdf/',views.download_pdf,name="pdf"),
+    # path('myrender/',views.myrender,name="render"),
+
+    #dyanmic url
+    # path('myrender/<int:x>',views.myrender,name="render"),
+    # path('myrender/<str:x>',views.myrender,name="render"),
+    # path('myrender/<slug:x>',views.myrender,name="render"),
+    path('myrender/<int:age>/<str:name>/<str:quali>/',views.myrender,name="render"),
+
 ]
+
