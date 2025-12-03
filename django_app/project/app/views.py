@@ -1,11 +1,14 @@
 print("views pagr call")
 
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 
 # Create your views here.
 from django.http import HttpResponse
 import json
 import csv
+from django .urls import reverse
+from urllib.parse import urlencode
+
 
 def landingpage(req):
     # return HttpResponse("hello this is django project")
@@ -77,3 +80,14 @@ def myrender(request,name,age,quali):
           
       }
        return render (request , 'myrender.html',data)
+
+
+def myredirect1(req):
+    url = reverse ('myredirect2')
+    data = urlencode({'name':'alaika','age':10})
+    return redirect (f'{url}?{data}')
+
+def myredirect2(req):
+    print("Hello")
+    # print(req.method)
+    print(req.get)

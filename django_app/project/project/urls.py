@@ -37,5 +37,10 @@ urlpatterns = [
     # path('myrender/<slug:x>',views.myrender,name="render"),
     path('myrender/<int:age>/<str:name>/<str:quali>/',views.myrender,name="render"),
 
+    path('myredirect1/',views.myredirect2,name="myredirect1") ,
+    path('myredirect2/',views.myredirect2,name="myredirect2")
+
+
 ]
+
 
