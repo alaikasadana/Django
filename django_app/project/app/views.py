@@ -90,4 +90,5 @@ def myredirect1(req):
 def myredirect2(req):
     print("Hello")
     # print(req.method)
-    print(req.get)
+    # print(req.get)
+    return HttpResponse("hello")
